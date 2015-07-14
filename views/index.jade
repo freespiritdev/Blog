@@ -1,0 +1,16 @@
+extends layout
+
+block page
+  - var menu = 'index'
+block content
+  if (articles.length === 0)
+    | There isn't any content publish yet.
+    a(href="/login") Log in
+    | to post and publish.
+  else
+    each article, index in articles
+      div
+        h2
+          a(href="/articles/#{article.slug}")= article.title
+h1 Hola
+p Welcome to The Blog!
